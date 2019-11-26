@@ -1,23 +1,27 @@
-FROM node:12.0-alpine
+# Based Image yang akan kita gunakan
+FROM 
 
-WORKDIR /usr/local/application
+# Menentukan folder di dalam container dimana kita akan menyimpan code kita
+WORKDIR 
 
-ENV PORT=3000
+# Setting environment yang dibutuhkan
+ENV 
 
-RUN apk add --no-cache tini
 
-COPY package.json package-lock.json* yarn.lock* ./
+# Memindahkan file dari computer kita ke dalam container
+# Copy yang pertama hanya akan menambahkan package.json
+# dan package-lock
+COPY 
 
-RUN npm install -g nodemon
+# Menjalankan npm install untuk menginstall dependensi
+# Menghilangkan cache yang ada
+RUN 
 
-RUN chown -R node:node .
+# Mengkopi seluruh file yang ada di dalam folder host 
+# Ke folder di container
+# Kita tidak akan memindahkan node_modules karena node_modules
+# Sudah dibuat di container ketika menjalankan npm install
+COPY 
 
-USER node
-
-RUN npm install && npm cache clean --force
-
-COPY . .
-
-ENTRYPOINT [ "/sbin/tini", "--" ]
-
-CMD ["node", "app.js"]
+# Menjalankan command untuk memulai server express
+CMD 
