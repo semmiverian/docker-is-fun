@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+  express:
+    build: .
+    volumes:
+      - '.:/usr/local/application'
+      - '/usr/local/application/node_modules'
+    ports:
+      - '3000:3000'
+  postgres:
+    image: 'postgres:10-alpine'
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: semmiverian
+      POSTGRES_PASSWORD: password
+    ports:
+      - '5433:5432'
+volumes:
+  db-data:
