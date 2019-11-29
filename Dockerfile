@@ -16,6 +16,8 @@ USER node
 
 RUN npm install && npm cache clean --force
 
+WORKDIR /usr/local/application/app
+
 COPY . .
 
 ENTRYPOINT [ "/sbin/tini", "--" ]
