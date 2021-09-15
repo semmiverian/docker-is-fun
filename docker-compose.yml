@@ -5,7 +5,7 @@ services:
     build: .
     volumes:
       - '.:/usr/local/application/app'
-      - '/usr/local/application/node_modules'
+      # - '/usr/local/application/node_modules'
     ports:
       - '3000:3000'
   postgres:

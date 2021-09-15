@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.17.1",
-    "pg": "7.14.0",
-    "sequelize": "5.21.2"
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
   }
 }

@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       age: DataTypes.INTEGER,
-      gender: DataTypes.STRING
+      gender: DataTypes.STRING,
     },
-    {sequelize}
+    { sequelize }
   )
 
   return User

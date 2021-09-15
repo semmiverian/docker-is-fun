@@ -1,4 +1,4 @@
-FROM node:12.0-alpine
+FROM node:14-alpine
 
 WORKDIR /usr/local/application
 
@@ -22,4 +22,4 @@ COPY . .
 
 ENTRYPOINT [ "/sbin/tini", "--" ]
 
-CMD ["node", "app.js"]
+CMD ["nodemon", "app.js"]
